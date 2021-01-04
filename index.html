@@ -3,155 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-</head>
+    <title>Cabiao Matrix Calculator</title>
+    <style>
+a:link, a:visited {
+  background-color: #a87976;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.568);
+}
+a:hover, a:active {
+  background-color: red;
+}
 
-<style>
-    .intro {
-        position: absolute;
-    top: 2%;
-    left: 35%;
-    }
-    .mat1 {
-    position: absolute;
-    top: 10%;
-    left: 40%;
-    }
-   
 
-    .output {
-    position: absolute;
-    top: 60%;
-    left: 40%;
-    }
-    .but {
+.container
+{
     position: absolute;
     top: 50%;
-    left: 37%;
-    }
+    left: 50%;
+    transform: translate(-50%,-50%);
+	width: 500px;
+	height: 300px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.336);
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.568);
 
-
-    .button{
-        box-shadow: 0px 10px 14px -7px #276873;
-	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-	background-color:#599bb3;
-	border-radius:8px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:16px;
-	font-weight:bold;
-	padding:9px 17px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #3d768a;
-    }
-
-    .button:hover{
-    background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-	background-color:#408c99;
-
-    .button:active{
-    position:relative;
-	top:1px;
 }
-    
+
+.but 
+{
+    position: absolute;
+    top: 5%;
+    left: 2%;
+
+}
 
 
-</style>
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+h1
+{    position: absolute;
+    left: 40%;
+}
+
+
+
+    </style>
+</head>
 <body>
-
-
-    <div class="intro">
-        <h3>2x2 MATRICE CALCULATOR</h3>
+    <h1>Matrix Calculator</h1>
+    <div class="container">
+        <Div class="but">
+            <a class="button" href="twoxtwo.html">2x2 by 2x2</a> <br>
+            <a class="button" href="" >2x3 by 3x2</a> <br>
+            <a class="button" href="" >2x4 by 4x2 </a>
+        </Div>   
 
     </div>
-<div class="mat1">
-    <h3>MATRIX ONE</h3>
-    <input type="text" id="r1c1" size="4"/> 
-    <input type="text" id="r1c2" size="4"/> <br>
 
-    <input type="text" id="r2c1" size="4"/> 
-    <input type="text" id="r2c2" size="4"/> <br> <br>
+    <script>
 
-
-    <h3>MATRIX TWO</h3>
-    <input type="text" id="1r1c1" size="4"/> 
-    <input type="text" id="1r1c2" size="4"/> <br>
-
-    <input type="text" id="1r2c1" size="4"/> 
-    <input type="text" id="1r2c2" size="4"/> <br> <br>
-    
-
-</div>
-
-<div class="output">
-    <h3 id="h1sum"> ANSWER </h3>
-    <input type="text" id="or1c1" size="4"/> 
-    <input type="text" id="or1c2" size="4"/> <br>
-
-    <input type="text" id="or2c1" size="4"/> 
-    <input type="text" id="or2c2" size="4"/> <br> <br>
-    
-
-</div>
-
-
-    <Div class="but">
-        <input type="button" class="button" value="+" onclick="calculate()" />
-        <input type="button" class="button" value="x" onclick="calculate()" /> 
-        <input type="button" class="button" value="-" onclick="calculate()" />
-
-    </Div>   
-        <script>
-            function calculate()
-            {
-                // Capture the entered values of input boxes
-                var m1r1c1 = document.getElementById("r1c1").value;
-                var m1r1c2 = document.getElementById("r1c2").value;
-                var m1r2c1 = document.getElementById("r2c1").value;
-                var m1r2c2 = document.getElementById("r2c2").value;
-
-
-                var m2r1c1 = document.getElementById("1r1c1").value;
-                var m2r1c2 = document.getElementById("1r1c2").value;
-                var m2r2c1 = document.getElementById("1r2c1").value;
-                var m2r2c2 = document.getElementById("1r2c2").value;
-                // Add them together and display
-
-                // first row and first col
-                var o1 = parseInt(m1r1c1) * parseInt(m2r1c1);
-                var o2 = parseInt(m1r1c2) * parseInt(m2r2c1);
-
-                var o3 = parseInt(m1r2c1) * parseInt(m2r1c1);
-                var o4 = parseInt(m1r2c2) * parseInt(m2r2c1);
-
-
-
-                var o5 = parseInt(m1r1c1) * parseInt(m2r1c2);
-                var o6 = parseInt(m1r1c2) * parseInt(m2r2c2);
-
-                var o7 = parseInt(m1r2c1) * parseInt(m2r1c2);
-                var o8 = parseInt(m1r2c2) * parseInt(m2r2c2);
-
-
-
-                var row1col1 = parseInt(o1) + parseInt(o2);
-                var row2col1 = parseInt(o3) + parseInt(o4);
-
-                var row1col2 = parseInt(o5) + parseInt(o6);
-                var row2col2 = parseInt(o7) + parseInt(o8);
-
-
-
-                
-
-                document.getElementById("or1c1").value = row1col1;
-                document.getElementById("or1c2").value = row1col2;
-                document.getElementById("or2c1").value = row2col1;
-                document.getElementById("or2c2").value = row2col2;
-                
-            }
-        </script>
+       
+    </script>
 </body>
 </html>
